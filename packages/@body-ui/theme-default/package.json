@@ -1,0 +1,49 @@
+{
+  "name": "@body-ui/theme-default",
+  "version": "0.0.0-development",
+  "sideEffects": false,
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./lib/body-ui-theme-default.cjs",
+    "default": "./lib/body-ui-theme-default.modern.js"
+  },
+  "main": "lib/body-ui-theme-default.cjs",
+  "module": "lib/body-ui-theme-default.module.js",
+  "types": "lib/src/index.d.ts",
+  "unpkg": "lib/body-ui-theme-default.umd.js",
+  "author": "Marius Lundgård <studio@mariuslundgard.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "microbundle --globals react/jsx-runtime=jsx --jsx jsx --jsxImportSource react --tsconfig tsconfig.lib.json",
+    "clean": "rimraf lib",
+    "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
+    "prebuild": "run-s clean"
+  },
+  "dependencies": {
+    "@sanity/color": "^2.1.5",
+    "color-blend": "^3.0.1"
+  },
+  "devDependencies": {
+    "@body-ui/core": "0.0.0-development"
+  },
+  "peerDependencies": {
+    "@body-ui/core": "0.0.0-development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marius/body-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marius/body-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

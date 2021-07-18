@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "body-ui-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marius Lundgård <studio@mariuslundgard.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "lerna run --scope @body-ui/* build",
+    "dev": "lerna run --stream --scope body-ui-workshop dev",
+    "lint": "lerna run --stream lint",
+    "postinstall": "husky install",
+    "release:latest": "yarn build && lerna publish --dist-tag latest"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/parser": "^5.3.0",
+    "chokidar": "^3.5.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.2.6",
+    "microbundle": "^0.14.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.1-rc"
+  },
+  "workspaces": [
+    "examples/*",
+    "packages/*",
+    "packages/@body-ui/*"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint"
+  }
+}

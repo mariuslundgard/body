@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.settings.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "./lib/dts/",
+    "jsx": "react-jsx",
+    "noEmit": true
+  },
+  "references": [{"path": "../core/tsconfig.lib.json"}]
+}

@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "body-ui-workshop",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "clean": "rimraf public",
+    "dev": "vite",
+    "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
+    "prebuild": "yarn clean",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sanity/icons": "^1.2.1",
+    "@sanity/ui": "^0.36.13",
+    "@sanity/ui-workshop": "^0.3.5",
+    "qs": "^6.10.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "@types/qs": "^6.9.7",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "vite": "^2.6.13"
+  }
+}

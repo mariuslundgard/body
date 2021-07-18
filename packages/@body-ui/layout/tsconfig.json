@@ -1,0 +1,19 @@
+{
+  "extends": "../../../tsconfig.settings.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "./lib/dts/",
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "paths": {
+      "@body-ui/layout": ["./src"]
+    }
+  },
+  "references": [
+    {"path": "../core/tsconfig.lib.json"},
+
+    // Used in `__workshop__` files
+    {"path": "../button/tsconfig.lib.json"},
+    {"path": "../typography/tsconfig.lib.json"}
+  ]
+}

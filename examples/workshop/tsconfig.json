@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.settings",
+  "include": ["./scripts", "./src", "./typings", "./vite.config.ts"],
+  "compilerOptions": {
+    "outDir": "./build/dts/",
+    "module": "ES2020",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "sourceMap": true,
+    "paths": {
+      "$workshop": ["./src/workshop.ts"]
+    }
+  }
+}
