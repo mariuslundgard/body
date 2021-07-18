@@ -1,0 +1,28 @@
+{
+  "name": "@body/core",
+  "version": "0.0.0-development",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "author": "Marius Lundgård <studio@mariuslundgard.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "run-s build:esbuild build:dts copy:dts:* clean:dts",
+    "build:esbuild": "node -r esbuild-register scripts/build.ts",
+    "build:dts": "tsc --emitDeclarationOnly --outDir lib/dts --project tsconfig.lib.json --rootDir src",
+    "clean": "rimraf lib",
+    "clean:dts": "rimraf lib/dts",
+    "copy:dts:cjs": "cpx 'lib/dts/**/*.{d.ts,d.ts.map}' lib/cjs",
+    "copy:dts:es": "cpx 'lib/dts/**/*.{d.ts,d.ts.map}' lib/esm",
+    "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
+    "prebuild": "run-s clean"
+  },
+  "dependencies": {
+    "typestyle": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.34",
+    "@types/styled-components": "^5.1.15",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.settings",
+  "include": ["./src", "./typings", "./vite.config.ts"],
+  "compilerOptions": {
+    "outDir": "./build/dts/",
+    "module": "ES2020",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "references": [
+    {"path": "../../packages/@body/button/tsconfig.lib.json"},
+    {"path": "../../packages/@body/core/tsconfig.lib.json"},
+    {"path": "../../packages/@body/layout/tsconfig.lib.json"},
+    {"path": "../../packages/@body/theme-default/tsconfig.lib.json"},
+    {"path": "../../packages/@body/typography/tsconfig.lib.json"}
+  ]
+}
