@@ -23,5 +23,5 @@ export interface BoxSizingStyleProps {
 export function boxSizing(props: BoxSizingStyleProps) {
   const {$sizing} = props
 
-  return cachedStyle('box_sizing', () => ({boxSizing: $sizing}), [$sizing])
+  return cachedStyle('box-sizing', () => ({boxSizing: $sizing}), [$sizing])
 }
