@@ -37,15 +37,11 @@ export function styled(name: string | ComponentType) {
 
               if (!styleProps) return ''
 
-              // console.log(classNameCache)
-
               if (classNameCache.has(styleProps)) {
                 return classNameCache.get(styleProps)
               }
 
-              // console.log('compile:fn', v.name, styleProps)
-
-              const cn = style({$debugName: v.name || 'anon', ...styleProps})
+              const cn = style({$debugName: v.name || '_', ...styleProps})
 
               classNameCache.set(styleProps, cn)
 
@@ -55,8 +51,6 @@ export function styled(name: string | ComponentType) {
             if (classNameCache.has(v)) {
               return classNameCache.get(v)
             }
-
-            // console.log('compile', v)
 
             const cn = style(v)
 
