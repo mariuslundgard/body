@@ -1,6 +1,6 @@
 {
   "name": "@body-ui/theme-default",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "sideEffects": false,
   "files": [
     "lib"
@@ -31,7 +31,7 @@
     "color-blend": "^3.0.1"
   },
   "devDependencies": {
-    "@body-ui/core": "^0.1.0"
+    "@body-ui/core": "^0.1.1"
   },
   "peerDependencies": {
     "@body-ui/core": "0.0.0-development"

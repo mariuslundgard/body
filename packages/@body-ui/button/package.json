@@ -1,6 +1,6 @@
 {
   "name": "@body-ui/button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "sideEffects": false,
   "files": [
     "lib"
@@ -27,8 +27,8 @@
     "prebuild": "run-s clean"
   },
   "devDependencies": {
-    "@body-ui/core": "^0.1.0",
-    "@body-ui/layout": "^0.1.0",
+    "@body-ui/core": "^0.1.1",
+    "@body-ui/layout": "^0.1.1",
     "@types/react": "^17.0.34",
     "react": "^17.0.2"
   },
