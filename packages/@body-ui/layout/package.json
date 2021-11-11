@@ -1,6 +1,6 @@
 {
   "name": "@body-ui/layout",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "sideEffects": false,
   "files": [
     "lib"
@@ -27,7 +27,7 @@
     "prebuild": "run-s clean"
   },
   "devDependencies": {
-    "@body-ui/core": "0.0.0-development",
+    "@body-ui/core": "^0.1.0",
     "@sanity/ui-workshop": "^0.3.7",
     "@types/react": "^17.0.34",
     "csstype": "^3.0.9",
