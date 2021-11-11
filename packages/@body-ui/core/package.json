@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marius/body-ui.git"
+    "url": "git+https://github.com/mariuslundgard/body-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/marius/body-ui/issues"
+    "url": "https://github.com/mariuslundgard/body-ui/issues"
   },
   "publishConfig": {
     "access": "public"
