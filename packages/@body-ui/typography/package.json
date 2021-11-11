@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@body-ui/core": "^0.1.2",
+    "@sanity/ui-workshop": "^0.3.7",
     "@types/react": "^17.0.34",
     "react": "^17.0.2"
   },

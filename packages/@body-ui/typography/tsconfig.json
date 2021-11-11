@@ -4,7 +4,15 @@
   "compilerOptions": {
     "outDir": "./lib/dts/",
     "jsx": "react-jsx",
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@body-ui/typography": ["./src"]
+    }
   },
-  "references": [{"path": "../core/tsconfig.lib.json"}]
+  "references": [
+    {"path": "../core/tsconfig.lib.json"},
+
+    // Used in `__workshop__` files
+    {"path": "../layout/tsconfig.lib.json"}
+  ]
 }
