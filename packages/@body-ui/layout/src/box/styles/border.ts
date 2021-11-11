@@ -1,12 +1,14 @@
 import {cache, CACHE_ENABLED, CSSObject} from '@body-ui/core'
 
-export function border(props: {
+export interface BorderStyleProps {
   $border?: boolean
   $borderTop?: boolean
   $borderRight?: boolean
   $borderBottom?: boolean
   $borderLeft?: boolean
-}): CSSObject | null {
+}
+
+export function border(props: BorderStyleProps): CSSObject | null {
   const {$border, $borderTop, $borderRight, $borderBottom, $borderLeft} = props
 
   if (!$border && !$borderTop && !$borderRight && !$borderBottom && !$borderLeft) {

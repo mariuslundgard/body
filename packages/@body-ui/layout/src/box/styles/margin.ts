@@ -1,4 +1,4 @@
-import {cache, CACHE_ENABLED, CSSObject, rem, responsive, Theme} from '@body-ui/core'
+import {cachedStyle, CSSObject, rem, responsive, Theme} from '@body-ui/core'
 
 export interface MarginProps {
   margin?: number | number[]
@@ -21,67 +21,134 @@ export interface MarginStyleProps {
 }
 
 export function margin(props: MarginStyleProps, theme: Theme): CSSObject | null {
-  const {$margin, $marginX, $marginY, $marginTop, $marginRight, $marginBottom, $marginLeft} = props
+  const {$margin} = props
+  const {media, space} = theme
 
-  const key =
-    'margin_' +
-    JSON.stringify({
-      $margin,
-      $marginX,
-      $marginY,
-      $marginTop,
-      $marginRight,
-      $marginBottom,
-      $marginLeft,
-    })
+  if ($margin.length === 0) return null
 
-  if (!CACHE_ENABLED || !cache[key]) {
-    const {media, space} = theme
+  return cachedStyle(
+    'm',
+    () =>
+      responsive(media, $margin, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
 
-    const styles = [
-      marginStyle('margin', $margin, media, space),
-      marginStyle('marginX', $marginX, media, space),
-      marginStyle('marginY', $marginY, media, space),
-      marginStyle('marginTop', $marginTop, media, space),
-      marginStyle('marginRight', $marginRight, media, space),
-      marginStyle('marginBottom', $marginBottom, media, space),
-      marginStyle('marginLeft', $marginLeft, media, space),
-    ].filter(Boolean) as CSSObject[]
-
-    cache[key] =
-      styles.length === 0
-        ? {margin: 0}
-        : styles.reduce<CSSObject>((acc, x) => {
-            Object.assign(acc, x)
-
-            return acc
-          }, {})
-  }
-
-  return cache[key]
+        return {margin: value}
+      }),
+    [media, $margin]
+  )
 }
 
-function marginStyle(
-  key: string,
-  spaceIndexes: number[],
-  media: number[],
-  space: number[]
-): CSSObject | null {
-  if (spaceIndexes.length === 0) return null
+export function marginX(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginX} = props
+  const {media, space} = theme
 
-  return responsive(media, spaceIndexes, (spaceIndex) => {
-    if (spaceIndex === null || spaceIndex === undefined) return {}
+  if ($marginX.length === 0) return null
 
-    const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+  return cachedStyle(
+    'mx',
+    () =>
+      responsive(media, $marginX, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
 
-    if (key === 'marginX') {
-      return {marginLeft: rem(size ?? 0), marginRight: rem(size ?? 0)}
-    }
+        return {marginLeft: value, marginRight: value}
+      }),
+    [media, $marginX]
+  )
+}
 
-    if (key === 'marginY') {
-      return {marginTop: rem(size ?? 0), marginBottom: rem(size ?? 0)}
-    }
+export function marginY(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginY} = props
+  const {media, space} = theme
 
-    return {[key]: rem(size ?? 0)}
-  })
+  if ($marginY.length === 0) return null
+
+  return cachedStyle(
+    'my',
+    () =>
+      responsive(media, $marginY, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
+
+        return {marginTop: value, marginBottom: value}
+      }),
+    [media, $marginY]
+  )
+}
+
+export function marginTop(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginTop} = props
+  const {media, space} = theme
+
+  if ($marginTop.length === 0) return null
+
+  return cachedStyle(
+    'mt',
+    () =>
+      responsive(media, $marginTop, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
+
+        return {marginTop: value}
+      }),
+    [media, $marginTop]
+  )
+}
+
+export function marginRight(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginRight} = props
+  const {media, space} = theme
+
+  if ($marginRight.length === 0) return null
+
+  return cachedStyle(
+    'mr',
+    () =>
+      responsive(media, $marginRight, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
+
+        return {marginRight: value}
+      }),
+    [media, $marginRight]
+  )
+}
+
+export function marginBottom(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginBottom} = props
+  const {media, space} = theme
+
+  if ($marginBottom.length === 0) return null
+
+  return cachedStyle(
+    'mb',
+    () =>
+      responsive(media, $marginBottom, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
+
+        return {marginBottom: value}
+      }),
+    [media, $marginBottom]
+  )
+}
+
+export function marginLeft(props: MarginStyleProps, theme: Theme): CSSObject | null {
+  const {$marginLeft} = props
+  const {media, space} = theme
+
+  if ($marginLeft.length === 0) return null
+
+  return cachedStyle(
+    'ml',
+    () =>
+      responsive(media, $marginLeft, (spaceIndex) => {
+        const size = spaceIndex < 0 ? 0 - space[0 - spaceIndex] : space[spaceIndex]
+        const value = rem(size)
+
+        return {marginLeft: value}
+      }),
+    [media, $marginLeft]
+  )
 }

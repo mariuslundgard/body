@@ -1,8 +1,8 @@
 import {styled, ThemeProvider, useResponsiveValue, useTheme, useVariant} from '@body-ui/core'
 import {Property} from 'csstype'
 import {forwardRef, ForwardedRef, HTMLProps} from 'react'
-import {border} from './styles/border'
-import {box} from './styles/box'
+import {border, BorderStyleProps} from './styles/border'
+import {box, boxSizing, BoxSizingStyleProps} from './styles/box'
 import {box_color} from './styles/box_color'
 import {Flex, flex} from './styles/flex'
 import {FlexDirection, flex_dir} from './styles/flex_dir'
@@ -11,9 +11,29 @@ import {grid_col} from './styles/grid_col'
 import {grid_cols} from './styles/grid_cols'
 import {Height, height} from './styles/height'
 import {LayoutProps, layout, LayoutStyleProps} from './styles/layout'
-import {MarginProps, margin, MarginStyleProps} from './styles/margin'
+import {
+  MarginProps,
+  margin,
+  MarginStyleProps,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+} from './styles/margin'
 import {order} from './styles/order'
-import {PaddingProps, padding, PaddingStyleProps} from './styles/padding'
+import {
+  PaddingProps,
+  padding,
+  PaddingStyleProps,
+  paddingX,
+  paddingY,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+} from './styles/padding'
 import {radius} from './styles/radius'
 import {shadow} from './styles/shadow'
 
@@ -43,13 +63,13 @@ export interface BoxProps extends LayoutProps, MarginProps, PaddingProps {
   variant?: string
 }
 
-interface BoxStyleProps extends LayoutStyleProps, MarginStyleProps, PaddingStyleProps {
+interface BoxStyleProps
+  extends BorderStyleProps,
+    BoxSizingStyleProps,
+    LayoutStyleProps,
+    MarginStyleProps,
+    PaddingStyleProps {
   $bg?: string
-  $border?: boolean
-  $borderTop?: boolean
-  $borderRight?: boolean
-  $borderBottom?: boolean
-  $borderLeft?: boolean
   $column: number[]
   $columns: number[]
   $direction: FlexDirection[]
@@ -63,7 +83,6 @@ interface BoxStyleProps extends LayoutStyleProps, MarginStyleProps, PaddingStyle
   $radius: number[]
   $scheme?: 'light' | 'dark'
   $shadow: number[]
-  $sizing?: Property.BoxSizing
   $tone?: string
 }
 
@@ -71,6 +90,7 @@ const Root = styled('div')<BoxStyleProps>(
   box,
   border,
   box_color,
+  boxSizing,
   flex,
   flex_dir,
   gap,
@@ -79,9 +99,21 @@ const Root = styled('div')<BoxStyleProps>(
   height,
   layout,
   margin,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
   order,
   radius,
   padding,
+  paddingX,
+  paddingY,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
   shadow
 )
 
@@ -121,6 +153,12 @@ export const Box = forwardRef(function Box(
     mode: $mode = variant?.mode || theme.mode,
     order,
     padding,
+    paddingX,
+    paddingY,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
     palette: $palette = variant?.palette || theme.palette,
     radius,
     scheme: $scheme = theme.scheme,
@@ -160,6 +198,12 @@ export const Box = forwardRef(function Box(
         $order={useResponsiveValue(order)}
         $palette={$palette}
         $padding={useResponsiveValue(padding)}
+        $paddingX={useResponsiveValue(paddingX)}
+        $paddingY={useResponsiveValue(paddingY)}
+        $paddingTop={useResponsiveValue(paddingTop)}
+        $paddingRight={useResponsiveValue(paddingRight)}
+        $paddingBottom={useResponsiveValue(paddingBottom)}
+        $paddingLeft={useResponsiveValue(paddingLeft)}
         $radius={useResponsiveValue(radius)}
         $scheme={$scheme}
         $shadow={useResponsiveValue(shadow)}

@@ -1,4 +1,5 @@
-import type {CSSObject} from '@body-ui/core'
+import {cachedStyle, CSSObject} from '@body-ui/core'
+import {Property} from 'csstype'
 
 export const box: CSSObject = {
   $debugName: 'box',
@@ -13,4 +14,14 @@ export const box: CSSObject = {
       ['-webkit-font-smoothing' as any]: 'inherit',
     },
   },
+}
+
+export interface BoxSizingStyleProps {
+  $sizing?: Property.BoxSizing
+}
+
+export function boxSizing(props: BoxSizingStyleProps) {
+  const {$sizing} = props
+
+  return cachedStyle('box_sizing', () => ({boxSizing: $sizing}), [$sizing])
 }

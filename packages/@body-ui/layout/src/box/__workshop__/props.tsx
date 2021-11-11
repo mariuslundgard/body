@@ -48,18 +48,20 @@ export default function PropsStory() {
   const tone = useSelect('Tone', BODY_TONE_OPTIONS, undefined) || undefined
   const bg = useSelect('Background', BODY_TONE_OPTIONS, undefined) || undefined
   const fg = useSelect('Foreground', BODY_TONE_OPTIONS, undefined) || undefined
+  const margin = useSelect('Margin', BODY_SPACE_OPTIONS, undefined) || undefined
   const padding = useSelect('Padding', BODY_SPACE_OPTIONS, undefined) || undefined
   const shadow = useSelect('Shadow', BODY_RADIUS_OPTIONS, undefined) || undefined
   const variant = useSelect('Variant', BODY_VARIANT_OPTIONS, undefined) || undefined
 
   return (
     <Box height="100%">
-      <Container padding={[4, 5, 6]}>
-        <Box padding={4} palette="base">
+      <Container padding={[4, 5, 6]} sizing="border-box">
+        <Box palette="base">
           <Box
             bg={bg}
             fg={fg}
             mode={mode}
+            marginTop={margin}
             padding={padding}
             radius={radius}
             shadow={shadow}
@@ -69,11 +71,12 @@ export default function PropsStory() {
             <Text>Box</Text>
           </Box>
         </Box>
-        <Box padding={4} palette="brand">
+        <Box palette="brand">
           <Box
             bg={bg}
             fg={fg}
             mode={mode}
+            marginTop={margin}
             padding={padding}
             radius={radius}
             shadow={shadow}
@@ -83,11 +86,12 @@ export default function PropsStory() {
             <Text>Box</Text>
           </Box>
         </Box>
-        <Box padding={4} palette="accent">
+        <Box palette="accent">
           <Box
             bg={bg}
             fg={fg}
             mode={mode}
+            marginTop={margin}
             padding={padding}
             radius={radius}
             shadow={shadow}
