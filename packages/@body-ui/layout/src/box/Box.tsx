@@ -75,7 +75,7 @@ interface BoxStyleProps
   $direction: FlexDirection[]
   $fg?: string
   $flex: Flex[]
-  $gap: number[]
+  $gap: Gap[]
   $height: Height[]
   $mode?: string
   $order: number[]
