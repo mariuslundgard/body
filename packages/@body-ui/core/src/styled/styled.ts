@@ -9,11 +9,12 @@ export type StyleFactory<Props extends {} = {}> = (props: Props, theme: Theme) =
 
 const classNameCache = new WeakMap<CSSObject, string>()
 
-export function styled(name: string | ComponentType) {
-  return <Props>(...factories: Array<StyleFactory<Props> | CSSObject>) => {
+export function styled<ComponentProps>(name: string | ComponentType<ComponentProps>) {
+  return <StyleProps>(...factories: Array<StyleFactory<StyleProps> | CSSObject>) => {
     const Styled = forwardRef(
       (
-        _props: Props & React.HTMLProps<HTMLElement> & {as: any; [key: string]: any},
+        _props: ComponentProps & StyleProps & React.HTMLProps<HTMLElement>,
+        // & {as: any; [key: string]: any},
         ref: React.ForwardedRef<HTMLElement>
       ) => {
         const {as = name, ...restProps} = _props
@@ -33,7 +34,7 @@ export function styled(name: string | ComponentType) {
           // Compile class names
           const classNames = factories.map((v) => {
             if (typeof v === 'function') {
-              const styleProps = v(restProps as Props, theme)
+              const styleProps = v(restProps as StyleProps, theme)
 
               if (!styleProps) return ''
 
@@ -64,7 +65,7 @@ export function styled(name: string | ComponentType) {
           return p
         }, [ref, restProps, theme])
 
-        return createElement(as, props)
+        return createElement(as, props as any)
       }
     )
 
