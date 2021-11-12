@@ -27,4 +27,9 @@ export default defineScope('box', 'Box', [
     title: 'Test',
     component: lazy(() => import('./test')),
   },
+  {
+    name: 'styled',
+    title: 'Styled',
+    component: lazy(() => import('./styled')),
+  },
 ])
