@@ -1,0 +1,44 @@
+{
+  "name": "@body-ui/color",
+  "version": "0.1.0",
+  "sideEffects": false,
+  "files": [
+    "lib"
+  ],
+  "_type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./lib/body-ui-color.cjs",
+    "default": "./lib/body-ui-color.modern.js"
+  },
+  "main": "lib/body-ui-color.cjs",
+  "module": "lib/body-ui-color.module.js",
+  "types": "lib/src/index.d.ts",
+  "unpkg": "lib/body-ui-color.umd.js",
+  "author": "Marius Lundgård <studio@mariuslundgard.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "run-s generate build:lib",
+    "build:lib": "microbundle --globals react/jsx-runtime=jsx --jsx jsx --jsxImportSource react --tsconfig tsconfig.lib.json",
+    "clean": "rimraf lib",
+    "generate": "node -r esbuild-register scripts/generate.ts",
+    "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
+    "prebuild": "run-s clean"
+  },
+  "dependencies": {
+    "polished": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariuslundgard/body-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariuslundgard/body-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extends": "../../../tsconfig.settings.json",
+  "include": ["./scripts", "./src"],
+  "compilerOptions": {
+    "outDir": "./lib/dts/",
+    "noEmit": true
+  }
+}
