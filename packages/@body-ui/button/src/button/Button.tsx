@@ -21,6 +21,7 @@ export const Button = forwardRef(function Button(
     radius = 2,
     size = 2,
     text,
+    tone = 'default',
     type = 'button',
     ...restProps
   } = props
@@ -35,6 +36,7 @@ export const Button = forwardRef(function Button(
       radius={radius}
       ref={ref as ForwardedRef<HTMLDivElement>}
       scheme={theme.scheme}
+      tone={tone}
       type={type}
     >
       {text && <Text size={size}>{text}</Text>}
