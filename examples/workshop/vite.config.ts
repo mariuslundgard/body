@@ -32,6 +32,10 @@ export default defineConfig({
         replacement: path.resolve(ROOT_PATH, 'packages/@body-ui/button/src'),
       },
       {
+        find: '@body-ui/color',
+        replacement: path.resolve(ROOT_PATH, 'packages/@body-ui/color/src'),
+      },
+      {
         find: '@body-ui/core',
         replacement: path.resolve(ROOT_PATH, 'packages/@body-ui/core/src'),
       },
