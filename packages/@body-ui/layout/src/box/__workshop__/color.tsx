@@ -12,7 +12,7 @@ export default function ColorStory() {
 
 function Scheme({scheme}: {scheme: 'light' | 'dark'}) {
   return (
-    <Box border scheme={scheme} padding={4} palette="base">
+    <Box bg="default" border scheme={scheme} padding={4} palette="base">
       <Box marginBottom={3}>
         <Text>Scheme: {scheme}</Text>
       </Box>
@@ -25,7 +25,7 @@ function Scheme({scheme}: {scheme: 'light' | 'dark'}) {
 
 function Palette({palette}: {palette: string}) {
   return (
-    <Box border padding={4} palette={palette}>
+    <Box bg="default" border padding={4} palette={palette}>
       <Box marginBottom={3}>
         <Text>Palette: {palette}</Text>
       </Box>

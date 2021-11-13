@@ -7,6 +7,7 @@ export default function GridStory() {
 
   return (
     <Box
+      bg="default"
       columns={[3, 4, 5]}
       gap={[3, 4, 5]}
       layout={['grid', 'grid', 'grid']}

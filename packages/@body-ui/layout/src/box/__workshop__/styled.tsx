@@ -8,7 +8,7 @@ const StyledBox = styled(Box)({
 
 export default function StyledStory() {
   return (
-    <Box padding={4}>
+    <Box bg="default" padding={4}>
       <StyledBox layout="block" marginY={3} padding={5}>
         Hello
       </StyledBox>

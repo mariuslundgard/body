@@ -8,6 +8,7 @@ export default function BoxStory() {
 
   return (
     <Flex
+      bg="default"
       direction="column"
       // gap={3}
       // scheme="dark"

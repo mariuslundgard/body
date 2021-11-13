@@ -1,7 +1,7 @@
 import {defineScope} from '@sanity/ui-workshop'
 import {lazy} from 'react'
 
-export default defineScope('box', 'Box', [
+export default defineScope('layout/box', 'Box', [
   {
     name: 'props',
     title: 'Props',

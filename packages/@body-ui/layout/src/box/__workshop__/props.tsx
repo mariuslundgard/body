@@ -54,7 +54,7 @@ export default function PropsStory() {
   const variant = useSelect('Variant', BODY_VARIANT_OPTIONS, undefined) || undefined
 
   return (
-    <Box height="100%">
+    <Box bg="default" height="100%">
       <Container padding={[4, 5, 6]} sizing="border-box">
         <Box palette="base">
           <Box
