@@ -6,9 +6,9 @@ import {
   ThemeColorState,
   ThemeColorTone,
 } from '@body-ui/core'
+import {black, hues, white} from './body'
 import {multiply, screen} from './helpers'
 import {rgba} from './lib/color-fns'
-import {black, hues, white} from './sanity'
 
 const palettes: Record<string, any> = {
   base: hues.gray,

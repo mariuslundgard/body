@@ -5,5 +5,5 @@
     "outDir": "./lib/dts/",
     "noEmit": true
   },
-  "references": [{"path": "../core/tsconfig.lib.json"}]
+  "references": [{"path": "../core/tsconfig.lib.json"}, {"path": "../color/tsconfig.lib.json"}]
 }

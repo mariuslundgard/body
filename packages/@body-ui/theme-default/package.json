@@ -27,7 +27,7 @@
     "prebuild": "run-s clean"
   },
   "dependencies": {
-    "@sanity/color": "^2.1.5",
+    "@body-ui/color": "^0.1.0",
     "color-blend": "^3.0.1"
   },
   "devDependencies": {
