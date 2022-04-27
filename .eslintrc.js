@@ -1,19 +1,32 @@
+'use strict'
+
 module.exports = {
-  root: true,
   env: {
-    node: true,
     browser: true,
-    jest: true,
+    es6: true,
+    node: true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
+    'eslint:recommended',
     'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
     'import/order': [
       'error',
       {
@@ -23,7 +36,7 @@ module.exports = {
         },
       },
     ],
-    'no-unused-vars': 'off',
+    'no-console': 'error',
     'no-warning-comments': ['warn', {location: 'start', terms: ['todo', '@todo', 'fixme']}],
     'padding-line-between-statements': [
       'warn',
@@ -36,9 +49,10 @@ module.exports = {
       {blankLine: 'always', prev: 'block-like', next: '*'},
       {blankLine: 'always', prev: '*', next: 'return'},
     ],
+    'react/prop-types': 'off',
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react/no-unescaped-entities': 0,
+    'react/no-unescaped-entities': 'off',
   },
   settings: {react: {version: 'detect'}},
 }

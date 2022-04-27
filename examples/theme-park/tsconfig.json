@@ -4,7 +4,7 @@
   "compilerOptions": {
     "outDir": "./build/dts/",
     "module": "ES2020",
-    "jsx": "react-jsx",
+    "jsx": "react",
     "allowJs": true,
     "sourceMap": true
   },

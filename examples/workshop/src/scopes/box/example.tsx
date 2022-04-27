@@ -1,9 +1,9 @@
 import {Button} from '@body/button'
 import {Box, Container, Flex, Grid} from '@body/layout'
 import {Text} from '@body/typography'
-import {useState} from 'react'
+import React, {useState} from 'react'
 
-export default function BoxStory() {
+export default function BoxStory(): React.ReactElement {
   const [render, setRender] = useState(false)
 
   return (

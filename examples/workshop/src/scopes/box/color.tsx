@@ -1,7 +1,8 @@
 import {Box} from '@body/layout'
 import {Text} from '@body/typography'
+import React from 'react'
 
-export default function ColorStory() {
+export default function ColorStory(): React.ReactElement {
   return (
     <Box columns={2} layout="grid">
       <Scheme scheme="light" />

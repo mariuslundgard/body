@@ -1,11 +1,11 @@
 import {Button} from '@body/button'
 import {Box} from '@body/layout'
 import {Text} from '@body/typography'
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 const negate = (v: unknown) => !v
 
-export default function TestStory() {
+export default function TestStory(): React.ReactElement {
   const [render, setRender] = useState(false)
 
   return (

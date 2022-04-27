@@ -9,8 +9,8 @@ export interface ButtonProps extends BoxProps {
 }
 
 export const Button = forwardRef(function Button(
-  props: ButtonProps & Omit<React.HTMLProps<HTMLButtonElement>, 'as' | 'size'>,
-  ref: React.ForwardedRef<HTMLButtonElement>
+  props: ButtonProps & Omit<React.HTMLProps<HTMLDivElement>, 'as' | 'size'>,
+  ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const theme = useTheme()
 
@@ -28,7 +28,7 @@ export const Button = forwardRef(function Button(
   return (
     <Box
       as="button"
-      {...(restProps as any)}
+      {...restProps}
       mode={mode}
       padding={padding}
       palette={theme.palette}

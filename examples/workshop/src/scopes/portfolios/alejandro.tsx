@@ -1,7 +1,8 @@
 import {Box} from '@body/layout'
 import {Text} from '@body/typography'
+import React from 'react'
 
-export default function InheritanceStory() {
+export default function InheritanceStory(): React.ReactElement {
   return (
     <Box direction="column" layout="flex" gap={[4, 5, 6, 7, 8]} style={{fontWeight: 600}}>
       <Box

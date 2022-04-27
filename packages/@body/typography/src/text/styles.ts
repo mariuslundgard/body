@@ -4,7 +4,7 @@ export interface TextStyleProps {
   $size: number[]
 }
 
-export function text(_props: {}, theme: Theme): CSSObject {
+export function text(_props: Record<string, unknown>, theme: Theme): CSSObject {
   const {font} = theme
   const key = 'text_size_' + JSON.stringify([font.text.family])
 

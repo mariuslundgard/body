@@ -3,24 +3,20 @@
   "version": "0.0.0-development",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "types": "./lib/dts/src/index.d.ts",
   "author": "Marius Lundgård <studio@mariuslundgard.com>",
   "license": "MIT",
   "scripts": {
-    "build": "run-s build:esbuild build:dts copy:dts:* clean:dts",
+    "build": "run-s build:esbuild",
     "build:esbuild": "node -r esbuild-register scripts/build.ts",
-    "build:dts": "tsc --emitDeclarationOnly --outDir lib/dts --project tsconfig.lib.json --rootDir src",
     "clean": "rimraf lib",
-    "clean:dts": "rimraf lib/dts",
-    "copy:dts:cjs": "cpx 'lib/dts/**/*.{d.ts,d.ts.map}' lib/cjs",
-    "copy:dts:es": "cpx 'lib/dts/**/*.{d.ts,d.ts.map}' lib/esm",
-    "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
     "prebuild": "run-s clean"
   },
   "devDependencies": {
     "@body/core": "0.0.0-development",
-    "@types/react": "^17.0.34",
-    "csstype": "^3.0.9",
-    "react": "^17.0.2"
+    "@types/react": "^18.0.8",
+    "csstype": "^3.0.11",
+    "react": "^18.1.0"
   },
   "peerDependencies": {
     "@body/core": "0.0.0-development"

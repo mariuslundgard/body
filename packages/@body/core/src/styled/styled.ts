@@ -1,19 +1,35 @@
-import {createElement, forwardRef, useMemo} from 'react'
+import {
+  createElement,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  RefAttributes,
+  useMemo,
+} from 'react'
 import React from 'react'
 import {style, types} from 'typestyle'
 import {Theme, useTheme} from '../theme'
 
 export type CSSObject = types.NestedCSSProperties
 
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type StyledComponent<Props extends {} = {}> = ForwardRefExoticComponent<
+  PropsWithoutRef<Props> & RefAttributes<HTMLElement> & React.HTMLProps<HTMLElement>
+>
+
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type StyleFactory<Props extends {} = {}> = (props: Props, theme: Theme) => CSSObject | null
 
 const classNameCache = new WeakMap<CSSObject, string>()
 
 export function styled(name: string) {
-  return <Props>(...factories: Array<StyleFactory<Props> | CSSObject>) => {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  return <Props extends {} = {}>(
+    ...factories: Array<StyleFactory<Props> | CSSObject>
+  ): StyledComponent<Props> => {
     const Styled = forwardRef(
       (
-        _props: Props & React.HTMLProps<HTMLElement> & {as: any; [key: string]: any},
+        _props: Props & React.HTMLProps<HTMLElement> & {as?: string; [key: string]: unknown},
         ref: React.ForwardedRef<HTMLElement>
       ) => {
         const {as = name, ...restProps} = _props
@@ -65,6 +81,7 @@ export function styled(name: string) {
             return cn
           })
 
+          //
           ;(p as any).className = [p.className, ...classNames].filter(Boolean).join(' ')
 
           return p
@@ -76,6 +93,6 @@ export function styled(name: string) {
 
     Styled.displayName = 'Styled(' + name || 'undefined' + ')'
 
-    return Styled
+    return Styled as StyledComponent<Props>
   }
 }

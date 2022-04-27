@@ -1,9 +1,10 @@
-import {useTheme} from '@body/core'
+// import {useTheme} from '@body/core'
 import {Box} from '@body/layout'
 import {Text} from '@body/typography'
+import React from 'react'
 
-export default function GridStory() {
-  console.log('theme', useTheme())
+export default function GridStory(): React.ReactElement {
+  // console.log('theme', useTheme())
 
   return (
     <Box

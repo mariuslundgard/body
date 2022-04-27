@@ -1,0 +1,10 @@
+/build
+
+# Examples
+/examples/theme-park/build
+/examples/workshop/public
+
+# Packages
+/packages/*/lib
+/packages/@body/*/lib
+/packages/@body/**/__fixtures__

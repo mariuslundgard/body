@@ -1,6 +1,7 @@
 import {Box} from '@body/layout'
 import {Text} from '@body/typography'
 import {useSelect} from '@sanity/ui-workshop'
+import React from 'react'
 
 const BODY_MODE_OPIONS = {
   '–': '',
@@ -42,7 +43,7 @@ const BODY_VARIANT_OPTIONS = {
   Primary: 'primary',
 }
 
-export default function PropsStory() {
+export default function PropsStory(): React.ReactElement {
   const mode = useSelect('Mode', BODY_MODE_OPIONS, undefined) || undefined
   const radius = useSelect('Radius', BODY_RADIUS_OPTIONS, undefined) || undefined
   const tone = useSelect('Tone', BODY_TONE_OPTIONS, undefined) || undefined

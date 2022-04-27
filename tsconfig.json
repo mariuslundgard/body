@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.settings",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build/dts/",
+    "emitDeclarationOnly": true,
+    "jsx": "react"
+  },
+  "references": [
+    {"path": "./packages/@body/button"},
+    {"path": "./packages/@body/core"},
+    {"path": "./packages/@body/layout"},
+    {"path": "./packages/@body/theme-default"},
+    {"path": "./packages/@body/typography"}
+  ]
+}

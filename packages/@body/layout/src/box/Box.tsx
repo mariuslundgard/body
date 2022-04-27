@@ -18,7 +18,7 @@ import {radius} from '../styles/radius'
 import {shadow} from '../styles/shadow'
 
 export interface BoxProps extends LayoutProps, MarginProps, PaddingProps {
-  as?: 'div'
+  as?: 'button' | 'div'
   bg?: string
   border?: boolean
   borderTop?: boolean
@@ -55,7 +55,7 @@ interface BoxStyleProps extends LayoutStyleProps, MarginStyleProps, PaddingStyle
   $direction: FlexDirection[]
   $fg?: string
   $flex: Flex[]
-  $gap: number[]
+  $gap: Gap[]
   $height: Height[]
   $mode?: string
   $order: number[]
@@ -94,8 +94,9 @@ export const Box = forwardRef(function Box(
       'as' | 'color' | 'direction' | 'height' | 'hidden' | 'ref'
     >,
   ref: React.ForwardedRef<HTMLDivElement>
-) {
+): React.ReactElement {
   const variant = useVariant(props.variant)
+
   const theme = useTheme()
 
   const {
@@ -109,7 +110,7 @@ export const Box = forwardRef(function Box(
     column,
     columns,
     direction,
-    fg: $fg = theme.fg,
+    fg: $fg = variant?.fg || theme.fg,
     flex,
     gap,
     height,

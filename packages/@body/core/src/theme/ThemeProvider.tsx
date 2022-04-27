@@ -1,5 +1,4 @@
 import React, {useContext, useMemo} from 'react'
-// import {ThemeProvider as StyledThemeProvider} from 'styled-components'
 import {Theme} from './Theme'
 import {ThemeContext, ThemeContextValue} from './ThemeContext'
 
@@ -12,7 +11,7 @@ export interface ThemeProviderProps {
   tone?: string
 }
 
-export function ThemeProvider(props: ThemeProviderProps) {
+export function ThemeProvider(props: ThemeProviderProps): React.ReactElement {
   const parentTheme = useContext(ThemeContext)
   const {
     children,
@@ -33,8 +32,6 @@ export function ThemeProvider(props: ThemeProviderProps) {
     }),
     [mode, palette, scheme, theme, tone]
   )
-
-  // const styledTheme = useMemo(() => ({body: theme!}), [theme])
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>
 }

@@ -1,8 +1,9 @@
 import {Box, Container} from '@body/layout'
 import {Text} from '@body/typography'
 import {SquareIcon} from '@sanity/icons'
+import React from 'react'
 
-export default function InheritanceStory() {
+export default function InheritanceStory(): React.ReactElement {
   return (
     <Box direction="column" layout="flex" mode="muted" scheme="dark" style={{minHeight: '100%'}}>
       <Container flex={1} mode="default" palette="base" scheme="light" width={4}>

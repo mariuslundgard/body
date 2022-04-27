@@ -17,18 +17,17 @@
     "@body/layout": "^0.0.0-development",
     "@body/theme-default": "^0.0.0-development",
     "@body/typography": "^0.0.0-development",
-    "@sanity/icons": "^1.2.1",
-    "@sanity/ui": "^0.36.13",
-    "@sanity/ui-workshop": "^0.3.5",
-    "qs": "^6.10.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@sanity/icons": "^1.2.8",
+    "@sanity/ui": "^0.37.8",
+    "qs": "^6.10.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
+    "@vitejs/plugin-react": "^1.3.1",
     "@types/qs": "^6.9.7",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
-    "vite": "^2.6.13"
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.0",
+    "vite": "^2.9.6"
   }
 }

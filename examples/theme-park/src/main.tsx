@@ -1,6 +1,6 @@
 import {ThemeProvider} from '@body/core'
 import {defaultTheme} from '@body/theme-default'
-import {StrictMode} from 'react'
+import React, {StrictMode} from 'react'
 import {render} from 'react-dom'
 import {App} from './App'
 

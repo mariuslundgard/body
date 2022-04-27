@@ -1,10 +1,15 @@
 {
   "extends": "../../../tsconfig.settings.json",
-  "include": ["src"],
+  "include": ["./src/"],
   "compilerOptions": {
+    "composite": true,
+    "rootDir": "./",
     "outDir": "./lib/dts/",
-    "jsx": "react",
-    "noEmit": true
+    "jsx": "react"
   },
-  "references": [{"path": "../core/tsconfig.lib.json"}]
+  "references": [
+    {"path": "../core/tsconfig.lib.json"},
+    {"path": "../layout/tsconfig.lib.json"},
+    {"path": "../typography/tsconfig.lib.json"}
+  ]
 }

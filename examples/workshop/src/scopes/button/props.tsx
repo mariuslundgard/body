@@ -1,6 +1,7 @@
 import {Button} from '@body/button'
 import {Box} from '@body/layout'
 import {useBoolean, useSelect} from '@sanity/ui-workshop'
+import React from 'react'
 
 const BODY_MODE_OPIONS: Record<string, '' | 'default' | 'solid' | 'muted'> = {
   '–': '',
@@ -38,7 +39,7 @@ const BODY_TONE_OPTIONS = {
   Critical: 'critical',
 }
 
-export default function PropsStory() {
+export default function PropsStory(): React.ReactElement {
   const border = useBoolean('Border', false)
   const mode = useSelect('Mode', BODY_MODE_OPIONS, undefined) || undefined
   const radius = useSelect('Radius', BODY_RADIUS_OPTIONS, undefined) || undefined
